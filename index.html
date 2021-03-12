@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mr Rahul Covid-19 App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="js/myscript.js"></script>
+</head>
+
+<body ng-app="MyApp" ng-controller="MyCtrl">
+    <div class="container py-3">
+        <div class="jumbotron">
+            <h1 class="text-center">{{title}}</h1>
+            <img class="image" src="img/logo.jpg" alt="logo">
+            <p class="text-center">If COVID-19 is spreading in your community, stay safe by taking some simple
+                precautions, such as physical distancing, wearing a mask, keeping rooms well ventilated, avoiding
+                crowds, cleaning your hands, and coughing into a bent elbow or tissue. Check local advice where you live
+                and work. Do it all!</p>
+
+            <!-- all data print -->
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="card bg-warning text-white">
+                        <div class="card-body">
+                            <h4>Confirmed Cases</h4>
+                            <h4>{{all_data.confirmed.value}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-success text-white">
+                        <div class="card-body">
+                            <h4>Recovered Cases</h4>
+                            <h4>{{all_data.recovered.value}}</h4>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-danger text-white">
+                        <div class="card-body">
+                            <h4>Death Cases</h4>
+                            <h4>{{all_data.deaths.value}}</h4>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- End all data -->
+
+            <input type="text" class="form-control mt-4" placeholder="Enter Country Name" ng-model="c"
+                ng-change="get_c_data()" />
+
+            <!-- country data -->
+            <div class="container-fluid" ng-if="c_data">
+                <h1 class="text-center mt-4 text-uppercase">{{c}} Status</h1>
+                <div class="row text-center mt-4" ng-if="c_data">
+                    <div class="col-md-4">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body">
+                                <h4>Confirmed Cases</h4>
+                                <h4>{{c_data.confirmed.value}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-success text-white">
+                            <div class="card-body">
+                                <h4>Recovered Cases</h4>
+                                <h4>{{c_data.recovered.value}}</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-danger text-white">
+                            <div class="card-body">
+                                <h4>Death Cases</h4>
+                                <h4>{{c_data.deaths.value}}</h4>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- End country recovery -->
+
+
+
+        </div>
+    </div>
+   
+</body>
+
+</html>

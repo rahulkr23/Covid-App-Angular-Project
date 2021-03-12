@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.image{
+   display: block;
+   margin: auto;
+    height: 150px;
+    width: 150px;
+    border-radius: 70px;
+    border: 2px solid rgb(255, 255, 255);
+}
+.text-center{
+    font-weight: bold;
+    /* font-size: 1rem; */
+    margin-top: 5px;
+    color: white;
+}
+body{
+ 
+    background-color: rgb(33 33 56);
+}
+
